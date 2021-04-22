@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3nf-UE-bBg">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Charity List-->
+        <scene sceneID="hqT-mo-wSN">
+            <objects>
+                <viewController storyboardIdentifier="CharityListViewController" id="07f-Ng-n7x" customClass="CharityListViewController" customModule="Tamboon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="014-XY-2Bf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pIN-38-nfa">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hiX-7j-vHj">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_empty" translatesAutoresizingMaskIntoConstraints="NO" id="pM5-wh-xAr">
+                                        <rect key="frame" x="157" y="337" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="CID-ez-M3c"/>
+                                            <constraint firstAttribute="width" constant="100" id="Uig-8k-z31"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="pM5-wh-xAr" firstAttribute="centerY" secondItem="hiX-7j-vHj" secondAttribute="centerY" id="G2i-G1-UAH"/>
+                                    <constraint firstItem="pM5-wh-xAr" firstAttribute="centerX" secondItem="hiX-7j-vHj" secondAttribute="centerX" id="m7L-hc-UwM"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dWv-tT-GKS"/>
+                        <color key="backgroundColor" red="0.9215573668" green="0.92156273129999999" blue="0.92157685759999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="dWv-tT-GKS" firstAttribute="trailing" secondItem="hiX-7j-vHj" secondAttribute="trailing" id="7B9-Nc-hSc"/>
+                            <constraint firstItem="pIN-38-nfa" firstAttribute="leading" secondItem="dWv-tT-GKS" secondAttribute="leading" id="8Zs-yH-Apl"/>
+                            <constraint firstAttribute="bottom" secondItem="pIN-38-nfa" secondAttribute="bottom" id="AyH-Hb-drV"/>
+                            <constraint firstItem="hiX-7j-vHj" firstAttribute="top" secondItem="dWv-tT-GKS" secondAttribute="top" id="C1A-le-I8j"/>
+                            <constraint firstItem="hiX-7j-vHj" firstAttribute="leading" secondItem="dWv-tT-GKS" secondAttribute="leading" id="Lfx-sq-B36"/>
+                            <constraint firstAttribute="trailing" secondItem="pIN-38-nfa" secondAttribute="trailing" id="afB-SD-J97"/>
+                            <constraint firstItem="dWv-tT-GKS" firstAttribute="bottom" secondItem="hiX-7j-vHj" secondAttribute="bottom" id="rPy-Qn-ws6"/>
+                            <constraint firstItem="pIN-38-nfa" firstAttribute="top" secondItem="dWv-tT-GKS" secondAttribute="top" id="uMw-2f-gWV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Charity List" id="kUh-HE-kKr"/>
+                    <connections>
+                        <outlet property="emptyView" destination="hiX-7j-vHj" id="uVM-hJ-TCq"/>
+                        <outlet property="tableView" destination="pIN-38-nfa" id="Tai-gB-7ce"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RAS-Nh-mRe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1050.7246376811595" y="144.64285714285714"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="NEf-eo-LOV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3nf-UE-bBg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="55z-E2-If7">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="07f-Ng-n7x" kind="relationship" relationship="rootViewController" id="h9i-fQ-zi7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5t3-o7-Ww3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140.57971014492756" y="144.64285714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_empty" width="256" height="256"/>
+    </resources>
+</document>

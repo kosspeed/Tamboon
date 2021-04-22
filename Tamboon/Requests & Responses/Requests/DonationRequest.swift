@@ -7,14 +7,8 @@
 
 import Foundation
 
-class DonationRequest: BaseRequest {
+struct DonationRequest: BaseRequest {
     let name: String
     let token: String
     let amount: Double
-    
-    init(name: String, token: String, amount: Double) {
-        self.name = name
-        self.token = token
-        self.amount = amount
-    }
 }

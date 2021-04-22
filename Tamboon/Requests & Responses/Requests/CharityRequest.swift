@@ -7,4 +7,4 @@
 
 import Foundation
 
-class CharityRequest: BaseRequest {}
+struct CharityRequest: BaseRequest {}
