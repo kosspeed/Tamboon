@@ -16,6 +16,14 @@ extension CALayer {
     }
     
     @discardableResult
+    func border(width: CGFloat, color: UIColor = .clear) -> CALayer {
+        borderWidth = width
+        borderColor = color.cgColor
+        
+        return self
+    }
+    
+    @discardableResult
     func shadow(color: UIColor = .black, opacity: Float = 1, offset: CGSize = .zero, radius: CGFloat = 10) -> CALayer {
         shadowColor = color.cgColor
         shadowOpacity = opacity

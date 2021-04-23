@@ -8,6 +8,7 @@ target 'Tamboon' do
   # Pods for Tamboon
   pod 'Moya'
   pod 'Kingfisher'
+  pod 'AnimatedCardInput'
   
   target 'TamboonTests' do
     inherit! :search_paths

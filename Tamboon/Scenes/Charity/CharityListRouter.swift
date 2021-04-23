@@ -20,6 +20,10 @@ class CharityListRouter:  CharityListDataPassing {
 //MARK: Routable
 extension CharityListRouter: CharityListRoutable {
     func routeToDonation(charity: CharityEntity) {
+        let storyboard = DonationViewController.storyboard
+        let destination = storyboard.instantiateViewController(identifier: DonationViewController.string) as! DonationViewController
+        destination.router.dataStore?.charity = charity
         
+        viewController?.navigationController?.pushViewController(destination, animated: true)
     }
 }
