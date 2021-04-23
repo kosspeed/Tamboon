@@ -9,8 +9,8 @@ import Foundation
 import Moya
 
 protocol OmiseRemoteDataSource {
-    func getCharities(request: CharityRequest, completion: @escaping (([Charity]) -> Void), failure: @escaping ((Error) -> Void))
-    func donation(request: DonationRequest, completion: @escaping (() -> Void), failure: @escaping ((Error) -> Void))
+    func getCharities(request: CharityRequest, completion: @escaping (([CharityEntity]) -> Void), failure: @escaping ((ErrorEntity) -> Void))
+    func donation(request: DonationRequest, completion: @escaping (() -> Void), failure: @escaping ((ErrorEntity) -> Void))
 }
 
 final class OmiseRemoteDataSourceImpl: OmiseRemoteDataSource {
@@ -20,14 +20,11 @@ final class OmiseRemoteDataSourceImpl: OmiseRemoteDataSource {
         self.provider = provider
     }
     
-    func getCharities(request: CharityRequest, completion: @escaping (([Charity]) -> Void), failure: @escaping ((Error) -> Void)) {
-        provider.request(.charities(request: request)) { (result) in
+    func getCharities(request: CharityRequest, completion: @escaping (([CharityEntity]) -> Void), failure: @escaping ((ErrorEntity) -> Void)) {
+        provider.requestWithWrappedSerialize(.charities(request: request), resposeType: [CharityResponse].self) { (result) in
             switch result {
             case .success(let response):
-                let decoder = JSONDecoder()
-                let decoded = try? decoder.decode([CharityResponse].self, from: response.data)
-                let entities = decoded?.map { $0.entity } ?? []
-                
+                let entities = response.map { $0.entity }
                 completion(entities)
             case .failure(let error):
                 failure(error)
@@ -35,8 +32,8 @@ final class OmiseRemoteDataSourceImpl: OmiseRemoteDataSource {
         }
     }
     
-    func donation(request: DonationRequest, completion: @escaping (() -> Void), failure: @escaping ((Error) -> Void)) {
-        provider.request(.donation(request: request)) { (result) in
+    func donation(request: DonationRequest, completion: @escaping (() -> Void), failure: @escaping ((ErrorEntity) -> Void)) {
+        provider.requestWithWrappedSerialize(.donation(request: request), resposeType: EmptyResponse.self) { (result) in
             switch result {
             case .success:
                 completion()

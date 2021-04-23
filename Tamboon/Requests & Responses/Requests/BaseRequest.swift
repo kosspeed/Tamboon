@@ -7,6 +7,12 @@
 
 import Foundation
 
-class BaseRequest: Requestable, Encodable {
-    var config: Config { return .default }
+protocol BaseRequest: Requestable, Encodable {
+    var config: Config { get }
+}
+
+extension BaseRequest {
+    var config: Config {
+        return .default
+    }
 }

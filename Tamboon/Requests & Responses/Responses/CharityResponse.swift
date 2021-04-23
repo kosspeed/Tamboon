@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CharityResponse: Decodable {
+struct CharityResponse: BaseResponse {
     let id: Int
     let name: String
     let logoUrl: String
@@ -20,9 +20,9 @@ struct CharityResponse: Decodable {
 
 //MARK: Transform
 extension CharityResponse {
-    var entity: Charity {
-        return Charity(id: id,
-                       name: name,
-                       logoUrl: logoUrl)
+    var entity: CharityEntity {
+        return CharityEntity(id: id,
+                             name: name,
+                             logoUrl: logoUrl)
     }
 }
