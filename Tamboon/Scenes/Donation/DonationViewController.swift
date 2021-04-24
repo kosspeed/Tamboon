@@ -8,6 +8,7 @@
 
 import UIKit
 import AnimatedCardInput
+import ProgressHUD
 
 class DonationViewController: UIViewController {
     //MARK: @IBOutlet
@@ -46,6 +47,8 @@ class DonationViewController: UIViewController {
     }
     
     @IBAction private func didTappedDonate(_ sender: Any) {
+        ProgressHUD.show()
+        
         performDonate(creditCardNumber: cardInputsView?.creditCardData.cardNumber,
                       creditCardHolder: cardInputsView?.creditCardData.cardholderName,
                       creditCardValidDate: cardInputsView?.creditCardData.validityDate,
@@ -144,6 +147,10 @@ private extension DonationViewController {
                                               amount: amount)
         interactor.donate(request: request)
     }
+    
+    func routeToSuccessSplash(dismissHandler: @escaping (() -> Void)) {
+        router.routeToSuccessSplash(dismissHandler: dismissHandler)
+    }
 }
 
 //MARK: Displayable
@@ -162,13 +169,18 @@ extension DonationViewController: DonationDisplayable {
                        amount: amount)
             }
         } else {
+            ProgressHUD.dismiss()
             alert(message: viewModel.error?.description ?? "")
         }
     }
     
     func displayDonate(viewModel: Donation.Donate.ViewModel) {
+        ProgressHUD.dismiss()
+        
         if viewModel.status == .success {
-            
+            routeToSuccessSplash { [weak self] in
+                self?.navigationController?.popViewController(animated: true)
+            }
         } else {
             alert(message: viewModel.error?.description ?? "")
         }

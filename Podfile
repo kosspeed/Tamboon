@@ -9,6 +9,7 @@ target 'Tamboon' do
   pod 'Moya'
   pod 'Kingfisher'
   pod 'AnimatedCardInput'
+  pod 'ProgressHUD'
   
   target 'TamboonTests' do
     inherit! :search_paths

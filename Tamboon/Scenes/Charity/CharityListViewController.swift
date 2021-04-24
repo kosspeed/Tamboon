@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class CharityListViewController: UIViewController {
     //MARK: @IBOutlet
@@ -28,6 +29,8 @@ class CharityListViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        
+        ProgressHUD.show()
         getCharities()
     }
 }
@@ -109,6 +112,8 @@ extension CharityListViewController: UITableViewDataSource & UITableViewDelegate
 //MARK: Displayable
 extension CharityListViewController: CharityListDisplayable {
     func displayGetCharities(viewModel: CharityList.GetCharities.ViewModel) {
+        ProgressHUD.dismiss()
+        
         switch viewModel.status {
         case.success:
             charities = viewModel.charities
