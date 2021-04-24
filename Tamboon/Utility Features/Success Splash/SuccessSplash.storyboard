@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Success Splash View Controller-->
+        <scene sceneID="WlG-iK-vDp">
+            <objects>
+                <viewController storyboardIdentifier="SuccessSplashViewController" id="tjt-wE-RMY" customClass="SuccessSplashViewController" customModule="Tamboon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1ol-0L-MLW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="H9h-xX-AXj">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gbB-kN-Y3r">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q8c-OQ-wev">
+                                                <rect key="frame" x="82" y="776" width="250" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="250" id="0Td-g5-uKj"/>
+                                                    <constraint firstAttribute="height" constant="50" id="bgW-9g-gHc"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="21"/>
+                                                <state key="normal" title="Dismiss">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="didTappedDismiss:" destination="tjt-wE-RMY" eventType="touchUpInside" id="eV4-1E-SwD"/>
+                                                </connections>
+                                            </button>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_transaction_success" translatesAutoresizingMaskIntoConstraints="NO" id="TZc-97-46r">
+                                                <rect key="frame" x="20" y="165" width="374" height="195"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you for your merit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ITl-R2-L33">
+                                                <rect key="frame" x="80" y="100" width="254" height="27"/>
+                                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.96861571069999997" green="0.96862143280000002" blue="0.96863609549999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstItem="Q8c-OQ-wev" firstAttribute="centerX" secondItem="gbB-kN-Y3r" secondAttribute="centerX" id="2LO-5n-YVD"/>
+                                            <constraint firstItem="Q8c-OQ-wev" firstAttribute="top" relation="greaterThanOrEqual" secondItem="TZc-97-46r" secondAttribute="bottom" constant="32.5" id="3bV-CP-yGJ"/>
+                                            <constraint firstItem="ITl-R2-L33" firstAttribute="leading" secondItem="gbB-kN-Y3r" secondAttribute="leading" constant="80" id="4IP-8p-nox"/>
+                                            <constraint firstAttribute="bottom" secondItem="Q8c-OQ-wev" secondAttribute="bottom" constant="70" id="5D2-T1-IN9"/>
+                                            <constraint firstAttribute="trailing" secondItem="TZc-97-46r" secondAttribute="trailing" constant="20" id="A9U-4R-9Wy"/>
+                                            <constraint firstAttribute="trailing" secondItem="ITl-R2-L33" secondAttribute="trailing" constant="80" id="d1V-z4-dsD"/>
+                                            <constraint firstItem="ITl-R2-L33" firstAttribute="top" secondItem="gbB-kN-Y3r" secondAttribute="top" constant="100" id="jCL-Fo-Ug4"/>
+                                            <constraint firstItem="TZc-97-46r" firstAttribute="leading" secondItem="gbB-kN-Y3r" secondAttribute="leading" constant="20" id="qoG-dT-16U"/>
+                                            <constraint firstItem="TZc-97-46r" firstAttribute="top" secondItem="ITl-R2-L33" secondAttribute="bottom" constant="38" id="wod-fC-TWq"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="gbB-kN-Y3r" secondAttribute="trailing" id="AxN-7R-g2K"/>
+                                    <constraint firstAttribute="bottom" secondItem="gbB-kN-Y3r" secondAttribute="bottom" id="DYO-KO-M46"/>
+                                    <constraint firstItem="gbB-kN-Y3r" firstAttribute="top" secondItem="H9h-xX-AXj" secondAttribute="top" id="JHy-BZ-QGZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="gbB-kN-Y3r" secondAttribute="bottom" id="VKk-IK-VqK"/>
+                                    <constraint firstAttribute="trailing" secondItem="gbB-kN-Y3r" secondAttribute="trailing" id="hTe-nB-piD"/>
+                                    <constraint firstItem="gbB-kN-Y3r" firstAttribute="leading" secondItem="H9h-xX-AXj" secondAttribute="leading" id="lTP-IH-fs9"/>
+                                    <constraint firstItem="gbB-kN-Y3r" firstAttribute="leading" secondItem="H9h-xX-AXj" secondAttribute="leading" id="mAr-pH-ERr"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Svg-XQ-cS6"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.30479753521126762" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mn1-N5-mc0"/>
+                    <connections>
+                        <outlet property="dismissButton" destination="Q8c-OQ-wev" id="BmF-XR-oVe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YOG-kL-nr2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928.98550724637687" y="39.508928571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ejh-Bk-4Es">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="57L-OI-PS4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YeC-1t-wBF">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tjt-wE-RMY" kind="relationship" relationship="rootViewController" id="rTc-Al-sKg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jtm-Xp-vHw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="39.508928571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bg_transaction_success" width="286.66665649414062" height="194.66667175292969"/>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

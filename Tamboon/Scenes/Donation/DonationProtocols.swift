@@ -31,7 +31,7 @@ protocol DonationPresentable {
 
 //MARK: Routable
 protocol DonationRoutable {
-    
+    func routeToSuccessSplash(dismissHandler: @escaping (() -> Void))
 }
 
 //MARK: DataStore
