@@ -14,6 +14,11 @@ struct ErrorEntity: Error {
     let description: String
     let code: Int
     
+    init(description: String, code: Int) {
+        self.description = description
+        self.code = code
+    }
+    
     init(from error: Error) {
         description = error.localizedDescription
         code = kDefaultErrorCode

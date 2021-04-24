@@ -31,7 +31,7 @@ extension CharityListPresenter: CharityListPresentable {
         var wrappedError: CharityList.Error?
         
         if let error = response.error {
-            let description = error.localizedDescription + "\n" + error.code.description
+            let description = error.description + "\n" + error.code.description
             wrappedError = CharityList.Error(description: description)
         }
         

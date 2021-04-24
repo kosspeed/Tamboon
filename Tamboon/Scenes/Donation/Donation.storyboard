@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Donation-->
+        <scene sceneID="LJF-HF-rih">
+            <objects>
+                <viewController storyboardIdentifier="DonationViewController" id="d40-HI-HK1" customClass="DonationViewController" customModule="Tamboon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IBG-SU-1G7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CqG-QJ-gaG">
+                                <rect key="frame" x="10" y="118" width="394" height="26.5"/>
+                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter amount (eg. 1000)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CxW-im-cYF">
+                                <rect key="frame" x="35" y="454.5" width="344" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="QfS-IY-5pO"/>
+                                </constraints>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rVc-Kp-Pig">
+                                <rect key="frame" x="30" y="164.5" width="354" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Sa6-l9-xhm"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="woH-mn-3Y5">
+                                <rect key="frame" x="30" y="374.5" width="354" height="70"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="DJL-Z0-WZN"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ce7-Jg-ldh">
+                                <rect key="frame" x="132" y="524.5" width="150" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Ip6-t5-eXz"/>
+                                    <constraint firstAttribute="width" constant="150" id="Tx2-fB-e51"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="21"/>
+                                <state key="normal" title="Donate!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTappedDonate:" destination="d40-HI-HK1" eventType="touchUpInside" id="04c-gx-kSE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FCe-bk-SIY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rVc-Kp-Pig" firstAttribute="top" secondItem="CqG-QJ-gaG" secondAttribute="bottom" constant="20" id="6XX-mC-Z0F"/>
+                            <constraint firstItem="woH-mn-3Y5" firstAttribute="top" secondItem="rVc-Kp-Pig" secondAttribute="bottom" constant="10" id="Ixr-uB-eja"/>
+                            <constraint firstItem="CxW-im-cYF" firstAttribute="leading" secondItem="woH-mn-3Y5" secondAttribute="leading" constant="5" id="M77-sj-tMM"/>
+                            <constraint firstItem="woH-mn-3Y5" firstAttribute="trailing" secondItem="rVc-Kp-Pig" secondAttribute="trailing" id="Mnf-6o-rlB"/>
+                            <constraint firstItem="CqG-QJ-gaG" firstAttribute="top" secondItem="FCe-bk-SIY" secondAttribute="top" constant="30" id="NUW-Ie-GF2"/>
+                            <constraint firstItem="CqG-QJ-gaG" firstAttribute="leading" secondItem="FCe-bk-SIY" secondAttribute="leading" constant="10" id="UDt-to-rd1"/>
+                            <constraint firstItem="CxW-im-cYF" firstAttribute="trailing" secondItem="woH-mn-3Y5" secondAttribute="trailing" constant="-5" id="XXY-YR-WgE"/>
+                            <constraint firstItem="Ce7-Jg-ldh" firstAttribute="top" secondItem="CxW-im-cYF" secondAttribute="bottom" constant="20" id="bGl-Ag-Ctt"/>
+                            <constraint firstItem="CxW-im-cYF" firstAttribute="top" secondItem="woH-mn-3Y5" secondAttribute="bottom" constant="10" id="bub-V1-OM1"/>
+                            <constraint firstItem="woH-mn-3Y5" firstAttribute="leading" secondItem="rVc-Kp-Pig" secondAttribute="leading" id="gnu-lo-ywW"/>
+                            <constraint firstItem="FCe-bk-SIY" firstAttribute="trailing" secondItem="rVc-Kp-Pig" secondAttribute="trailing" constant="30" id="kCi-so-dMH"/>
+                            <constraint firstItem="FCe-bk-SIY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Ce7-Jg-ldh" secondAttribute="bottom" constant="15" id="kS4-Ap-whw"/>
+                            <constraint firstItem="rVc-Kp-Pig" firstAttribute="leading" secondItem="FCe-bk-SIY" secondAttribute="leading" constant="30" id="sEZ-cl-SK2"/>
+                            <constraint firstItem="FCe-bk-SIY" firstAttribute="trailing" secondItem="CqG-QJ-gaG" secondAttribute="trailing" constant="10" id="w5C-qY-ItI"/>
+                            <constraint firstItem="Ce7-Jg-ldh" firstAttribute="centerX" secondItem="CxW-im-cYF" secondAttribute="centerX" id="xke-EW-Xv9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Donation" id="Ogf-h1-WdO"/>
+                    <connections>
+                        <outlet property="amountTextField" destination="CxW-im-cYF" id="IoY-Yh-c14"/>
+                        <outlet property="charityNameLabel" destination="CqG-QJ-gaG" id="19C-bi-ox0"/>
+                        <outlet property="containerCardInputsView" destination="woH-mn-3Y5" id="vIu-ac-j4q"/>
+                        <outlet property="containerCardView" destination="rVc-Kp-Pig" id="UvF-NQ-y1g"/>
+                        <outlet property="donateButton" destination="Ce7-Jg-ldh" id="3iy-vb-U5g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u0O-9u-opv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1089.8550724637682" y="58.928571428571423"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ONa-L9-s2T">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DUh-mw-D2f" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kOs-Gz-RrD">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="d40-HI-HK1" kind="relationship" relationship="rootViewController" id="Rh5-Ua-Tc4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Cc-1v-bVm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="179.71014492753625" y="58.928571428571423"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

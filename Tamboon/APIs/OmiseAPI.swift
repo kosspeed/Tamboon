@@ -31,9 +31,9 @@ extension OmiseAPI: TargetType {
     var path: String {
         switch self {
         case .charities:
-            return "/charities"
+            return "/tamboon-api/1.0.0/charities"
         case .donation:
-            return "/donations"
+            return "/tamboon-api/1.0.0/donations"
         }
     }
     
