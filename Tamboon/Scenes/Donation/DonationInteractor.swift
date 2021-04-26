@@ -55,7 +55,7 @@ extension DonationInteractor: DonationBusinessLogic {
         let amount = Double(request.amount) ?? 0.0
         let token = config.apiToken
         
-        useCase.donation(name: request.creditCardHolder, amount: amount, token: token, completion: { [weak self] in
+        useCase.execute(name: request.creditCardHolder, amount: amount, token: token, completion: { [weak self] in
             let response = Donation.Donate.Response(status: .success, error: nil)
             self?.presenter.presentDonate(response: response)
         }, failure: { [weak self] (error) in
