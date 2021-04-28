@@ -26,4 +26,13 @@ extension Bundle {
         
         return resource[key]
     }
+    
+    static func loadDataInJSONFile(fileName: String, type: AnyClass) -> Data? {
+        let bundle = Bundle(for: type)
+        guard let filePath = bundle.path(forResource: fileName, ofType: "json"),
+              let data = try? Data(contentsOf: URL(fileURLWithPath: filePath)) else {
+            return nil
+        }
+        return data
+    }
 }

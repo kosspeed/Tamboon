@@ -8,7 +8,7 @@
 import Foundation
 
 protocol DonationUseCase {
-    func donation(name: String, amount: Double, token: String, completion: @escaping (() -> Void), failure: @escaping ((ErrorEntity) -> Void))
+    func execute(name: String, amount: Double, token: String, completion: @escaping (() -> Void), failure: @escaping ((ErrorEntity) -> Void))
 }
 
 class DonationUseCaseImpl: DonationUseCase {
@@ -18,7 +18,7 @@ class DonationUseCaseImpl: DonationUseCase {
         self.repository = repository
     }
     
-    func donation(name: String, amount: Double, token: String, completion: @escaping (() -> Void), failure: @escaping ((ErrorEntity) -> Void)) {
+    func execute(name: String, amount: Double, token: String, completion: @escaping (() -> Void), failure: @escaping ((ErrorEntity) -> Void)) {
         let request = DonationRequest(name: name,
                                       token: token,
                                       amount: amount)

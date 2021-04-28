@@ -1,0 +1,5 @@
+{
+  "success": true,
+  "error_code": "insufficient_minerals",
+  "error_message": "Card has insufficient balance."
+}
